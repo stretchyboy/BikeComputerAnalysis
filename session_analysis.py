@@ -135,6 +135,8 @@ data = groups.reset_index(drop=True)#
 #.drop(labels=["session_id", "id"])
 print (data)
 con.close()
+
+data.to_csv("data/climbs.csv", sep=',', index=False, encoding='utf-8')
 exit()
 
 means = groups.groupby(['pre_hours','grad_mean']).agg(
@@ -160,3 +162,4 @@ hours = groups.groupby(['pre_hours']).agg(
         #kph_max = ("kph","max"),
 )
 print(hours)
+
